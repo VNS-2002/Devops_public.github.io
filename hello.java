@@ -2,16 +2,30 @@ import java.util.Scanner;
 
 public class hello {
 
-    public static void main(String[] args) {
+    public static void main (String[] args)
+   {		
+       int i =0;
+       int num =0;
+       //Empty String
+       String  primeNumbers = "";
 
-        Scanner reader = new Scanner(System.in);
-
-        System.out.print("Enter a number: ");
-        int num = reader.nextInt();
-
-        if(num % 2 == 0)
-            System.out.println(num + " is even");
-        else
-            System.out.println(num + " is odd");
-    }
+       for (i = 1; i <= 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     //Appended the Prime number to the String
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 1 to 100 are :");
+       System.out.println(primeNumbers);
+   }
 }
