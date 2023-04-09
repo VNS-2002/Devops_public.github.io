@@ -1,18 +1,24 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Git') {
+    stages{
+        stage('checking python version') {
             steps {
-                git 'https://github.com/VNS-2002/Devops_public.git'
-                bat 'javac hello.java'
-                bat 'java hello'
-                
+                bat 'python -V'
+            }
+        }
+
+        stage('REPO Cloning'){
+            steps {
+                bat 'xcopy /S "*" ""C:/xampp/htdocs/DEVops pipeline"" /Y'
+            }
+        }
+
+        stage('Print done'){
+            steps{
+                echo 'Done!'
             }
         }
     }
-        
-    
 }
 
 
